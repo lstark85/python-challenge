@@ -3,7 +3,7 @@ import os
 import csv
 
 #Create path to csv
-csvpath=os.path.join('Resources','election_data.csv')
+csvpath=os.path.join( 'Resources','election_data.csv')
 with open(csvpath, newline='') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
     #print(csvreader)
@@ -68,16 +68,30 @@ with open(csvpath, newline='') as csvfile:
     else:
         winner = "O'Tooley"
 
+        #Output to text file
         #Print Statements
 
+text_file= open("PYPoll_Results.txt", "wt")
+text_file.write(f"Election Results" + "\n")
 print(f"Election Results" + "\n")
+text_file.write(f"-----------------------------------" + "\n")
 print(f"-----------------------------------" + "\n")
+text_file.write(f"Total Votes: {total_votes}" + "\n")
 print(f"Total Votes: {total_votes}" + "\n")
+text_file.write(f"-----------------------------------" + "\n")
 print(f"-----------------------------------" + "\n")
+text_file.write(f"Khan: {khan_percent}% ({khan_votes})" + "\n")
 print(f"Khan: {khan_percent}% ({khan_votes})" + "\n")
+text_file.write(f"Correy: {correy_percent}% ({correy_votes})" + "\n")
 print(f"Correy: {correy_percent}% ({correy_votes})" + "\n")
+text_file.write(f"Li: {li_percent}% ({li_votes})" + "\n")
 print(f"Li: {li_percent}% ({li_votes})" + "\n")
+text_file.write(f"O'Tooley: {otooley_percent}% ({otooley_votes})" + "\n")
 print(f"O'Tooley: {otooley_percent}% ({otooley_votes})" + "\n")
+text_file.write(f"-----------------------------------" + "\cdcdn")
 print(f"-----------------------------------" + "\n")
+text_file.write(f"Winner: {winner}" + "\n")
 print(f"Winner: {winner}" + "\n")
+text_file.write(f"-----------------------------------")
 print(f"-----------------------------------")
+text_file.close()
